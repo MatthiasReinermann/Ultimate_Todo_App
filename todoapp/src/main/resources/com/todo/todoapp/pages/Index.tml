@@ -1,0 +1,43 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+
+<div class="row well">
+    <div class="span10 offset1">
+        <div class="row">
+
+            <div class="span5">
+                <h3>Willkommen zur Webtech2 TodoList</h3>
+                <p>
+                    <h4>Die Webtech2 TodoList bietet einzigartige Vorteile :</h4>
+                    <ul>
+                        <li>Du kannst Todos speichern und organisieren, WOW!</li>
+                        <li>Todos sind sogar einfach durchsuchbar</li>
+                        <li>Filter und Sortiere deine Todo nach Belieben</li>
+                    </ul>
+                    <h4>Und... TodoList kostet keinen Cent, nur Developerschweiss</h4>
+                </p>
+
+                <t:unless test="loggedUserExists">
+                    <p>
+                        <a t:type="pageLink" t:page="user/Login" class="btn btn-primary btn-large"> Sign in </a> or <a t:type="pageLink" t:page="user/Register" class="btn btn-primary btn-large" > Sign up </a>
+                    </p>
+                </t:unless>
+
+                <t:if test="loggedUserExists">
+                    <p>
+                        <a t:type="pageLink" t:page="user/Home" class="btn btn-primary btn-large" > Go to my Home page </a>
+                    </p>
+                </t:if>
+
+            </div>
+
+            <div class="span5">
+                <img src="${context:static/img/todolist.jpg}" alt="todolist"/>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</html>
